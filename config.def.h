@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";
+static char *font = "Terminus:pixelsize=20:antialias=false";
 static int borderpx = 2;
 
 /*
@@ -94,33 +94,41 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/*
+ * drag and drop escape characters
+ *
+ * this will add a '\' before any characters specified in the string.
+ */
+char *xdndescchar = " !\"#$&'()*;<>?[\\]^`{|}~";
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* Gruvbox dark palette */
+	/* Transfiguration icon palette — colors sampled from the icon:
+	 * hills, terracotta robes, gold halos, salmon clouds */
 	/* 0-7: normal colors */
-	[0] = "#1d2021", /* black   */
-	[1] = "#cc241d", /* red     */
-	[2] = "#566f3a", /* reeen   */
-	[3] = "#d79921", /* yellow  */
-	[4] = "#458588", /* blue    */
-	[5] = "#b16286", /* magenta */
-	[6] = "#689d6a", /* cyan    */
-	[7] = "#fbf1c7", /* white   */
+	[0] = "#333b34", /* black   (hill shadow)   */
+	[1] = "#c05c48", /* red     (terracotta)    */
+	[2] = "#6e7d54", /* green   (olive robe)    */
+	[3] = "#c9a55e", /* yellow  (gold-mustard)  */
+	[4] = "#667f8c", /* blue    (slate-teal)    */
+	[5] = "#a66866", /* magenta (dusty rose)    */
+	[6] = "#5e8c7e", /* cyan    (hill teal)     */
+	[7] = "#d6ccb4", /* white   (parchment)     */
 
 	/* 8-15: bright colors */
-	[8]  = "#928374",
-	[9]  = "#fb4934",
-	[10] = "#b8bb26",
-	[11] = "#fabd2f",
-	[12] = "#83a598",
-	[13] = "#d3869b",
-	[14] = "#8ec07c",
-	[15] = "#fbf1c7",
+	[8]  = "#6b6b5c",
+	[9]  = "#d9705a",
+	[10] = "#8fa06a",
+	[11] = "#ddbe7e",
+	[12] = "#8aa6b4",
+	[13] = "#c08480", /* salmon clouds */
+	[14] = "#84ae9e",
+	[15] = "#f0e9d8",
 
 	/* extra slots (if your config has more, keep them or set as needed) */
-	[256] = "#fbf1c7", /* default foreground */
-	[257] = "#282828", /* default background */
-	[258] = "#d79921", /* cursor color       */
+	[256] = "#e6dec6", /* default foreground (warm cream)  */
+	[257] = "#262e28", /* default background (dark hills)  */
+	[258] = "#d3b380", /* cursor = gold halo               */
 };
 
 
